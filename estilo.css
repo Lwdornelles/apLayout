@@ -105,3 +105,28 @@ header{
         display: block;
     }
 }
+
+/*CSS do form*/
+
+.row:after{
+    content: "";
+    display: flex;
+    flex-wrap: wrap;
+    clear: both;
+}
+
+.label{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.input{
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+
+
