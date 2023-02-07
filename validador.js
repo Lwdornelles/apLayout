@@ -77,11 +77,69 @@ function mascaraCNPJ(i) {
 
 function validar() {
     var nome = formUser.nome.value;
-    
-    
-    if (nome == ""|| nome.length <= 3) {
+    var email = formUser.email.value;
+    var fone = formUser.fone.value;
+    var end = formUser.end.value;
+    var cpf = formUser.cpf.value;
+    var cnpj = formUser.cnpj.value;
+    var senha = formUser.senha.value;
+    var confSenha = formUser.confSenha.value;
+
+
+    if (nome == "" || nome.length <= 3) {
         alert("Informe o nome completo!");
         formUser.nome.focus();
         return false;
     }
+
+    if(email == "" || email.length <= 10){
+        alert("Informe o e-mail correto!");
+        formUser.email.focus();
+        return false;
+    }
+
+    if (fone == "" || fone.length <= 9) {
+        alert("Informe o celular correto!");
+        formUser.fone.focus();
+        return false;
+    }
+
+    if (end == "" || end.length <= 8) {
+        alert("Informe o endereço completo!");
+        formUser.end.focus();
+        return false;
+    }
+    
+    if (cpf == "" && cnpj == "") {
+        alert("Selecione um Documento");
+        return false;
+    }
+
+    if (cpf != "" && cnpj == "") {
+        if (cpf.length != 14) {
+            alert("CPF incorreto");
+            formUser.cpf.focus();
+            return false;
+        }
+    }
+
+    if (cnpj != "" && cpf == "") {
+        if (cnpj.length != 18) {
+            alert("CNPJ incorreto");
+            formUser.cnpj.focus();
+            return false;
+        }
+    }
+
+    if (senha == "" || senha.length <8) {
+        alert("Senha não atende aos requisitos!");
+        formUser.senha.focus();
+        return false;
+    }
+
+        if (senha != confSenha) {
+            alert("Senhas não conhecidem!");
+            return false;
+        }
+    
 }
